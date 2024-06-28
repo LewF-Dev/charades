@@ -1,0 +1,105 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #000;
+}
+
+.header h2 {
+    font-size: 20px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.counters {
+    display:flex;
+    justify-content:space-between;
+    width: 160px; /* Adjust width as needed */
+    margin-bottom: 20px;
+}
+
+.counter {
+    font-size: 16px;
+    margin: 20px;
+
+}
+
+.player1-counter {
+    color: red;
+}
+
+.player1-count {
+    display: block;
+}
+
+.player2-counter {
+    color: blue;
+}
+
+.player2-count {
+    display: block;
+}
+
+.board {
+    display: inline-block;
+    border: 2px solid #333;
+}
+
+.row {
+    display: flex;
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.white {
+    background: #fff;
+}
+
+.black {
+    background: #000;
+}
+
+.piece {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.piece i {
+    font-size: 30px; /* Adjust size as needed */
+}
+
+.piece.player1 i {
+    color: red; /* Color for player 1 */
+}
+
+.piece.player2 i {
+    color: blue; /* Color for player 2 */
+}
+
+.selected {
+    border: 2px solid yellow;
+}
+
+#checkers-heading {
+    font-size: 300%;
+}
