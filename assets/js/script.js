@@ -1,83 +1,83 @@
 document.addEventListener("DOMContentLoaded", () => {
-    addSquareEventListeners();
-    initializePieces();
-    updateCounters();
-    determineStartingPlayer();
-});
+    addSquareEventListeners()
+    initializePieces()
+    updateCounters()
+    determineStartingPlayer()
+})
 
-let selectedPiece = null;
-let currentPlayer = null; // Track the current player
+let selectedPiece = null
+let currentPlayer = null // Track the current player
 
 function addSquareEventListeners() {
-    const squares = document.querySelectorAll(".square");
+    const squares = document.querySelectorAll(".square")
     squares.forEach(square => {
-        square.addEventListener("click", () => handleSquareClick(square));
-    });
+        square.addEventListener("click", () => handleSquareClick(square))
+    })
 }
 
 function handleSquareClick(square) {
     if (selectedPiece) {
         if (selectedPiece === square) {
             // Deselect the piece if the same square is clicked
-            selectedPiece.classList.remove("selected");
-            selectedPiece = null;
+            selectedPiece.classList.remove("selected")
+            selectedPiece = null
         } else {
-            movePiece(square);
+            movePiece(square)
         }
     } else if (square.firstChild) {
-        selectPiece(square);
+        selectPiece(square)
     }
 }
 
 function selectPiece(square) {
-    const piece = square.firstChild;
+    const piece = square.firstChild
     if ((currentPlayer === "player1" && piece.classList.contains("player1")) ||
         (currentPlayer === "player2" && piece.classList.contains("player2"))) {
         if (selectedPiece) {
-            selectedPiece.classList.remove("selected");
+            selectedPiece.classList.remove("selected")
         }
-        selectedPiece = square;
-        square.classList.add("selected");
+        selectedPiece = square
+        square.classList.add("selected")
     }
 }
 
 function movePiece(targetSquare) {
     if (isValidMove(targetSquare)) {
-        targetSquare.appendChild(selectedPiece.firstChild);
-        selectedPiece.classList.remove("selected");
-        selectedPiece = null;
-        updateCounters();
-        switchPlayer();
+        targetSquare.appendChild(selectedPiece.firstChild)
+        selectedPiece.classList.remove("selected")
+        selectedPiece = null
+        updateCounters()
+        switchPlayer()
     }
 }
 
 function isValidMove(targetSquare) {
-    if (targetSquare.firstChild) return false;
+    if (targetSquare.firstChild) return false
 
-    const [startRow, startCol] = selectedPiece.id.split('-').map(Number);
-    const [endRow, endCol] = targetSquare.id.split('-').map(Number);
-    const piece = selectedPiece.firstChild;
+    const [startRow, startCol] = selectedPiece.id.split('-').map(Number)
+    const [endRow, endCol] = targetSquare.id.split('-').map(Number)
+    const piece = selectedPiece.firstChild
 
-    const rowDiff = endRow - startRow;
-    const colDiff = Math.abs(endCol - startCol);
+    const rowDiff = endRow - startRow
+    const colDiff = Math.abs(endCol - startCol)
 
     if (piece.classList.contains("player1")) {
-        if (rowDiff === -1 && colDiff === 1) return true; // Simple move
+        if (rowDiff === -1 && colDiff === 1) return true // Simple move
         if (rowDiff === -2 && colDiff === 2) { // Capture move
-            const midRow = (startRow + endRow) / 2;
-            const midCol = (startCol + endCol) / 2;
-            const midSquare = document.getElementById(`${midRow}-${midCol}`);
+            const midRow = (startRow + endRow) / 2
+            const midCol = (startCol + endCol) / 2
+            const midSquare = document.getElementById(`${midRow}-${midCol}`)
             if (midSquare.firstChild && midSquare.firstChild.classList.contains("player2")) {
-                midSquare.removeChild(midSquare.firstChild); // Capture the piece
-                return true;
+                midSquare.removeChild(midSquare.firstChild) // Capture the piece
+                return true
             }
         }
     } else if (piece.classList.contains("player2")) {
-        if (rowDiff === 1 && colDiff === 1) return true; // Simple move
+        if (rowDiff === 1 && colDiff === 1) return true // Simple move
         if (rowDiff === 2 && colDiff === 2) { // Capture move
-            const midRow = (startRow + endRow) / 2;
-            const midCol = (startCol + endCol) / 2;
-            const midSquare = document.getElementById(`${midRow}-${midCol}`);
+            const midRow = (startRow + endRow) / 2
+            const midCol = (startCol + endCol) / 2
+            const midSquare = document.getElementById(`${midRow}-${midCol}`)
             if (midSquare.firstChild && midSquare.firstChild.classList.contains("player1")) {
                 midSquare.removeChild(midSquare.firstChild) // Capture the piece
                 return true
@@ -129,8 +129,8 @@ function updateCounters() {
 }
 
 function determineStartingPlayer() {
-    currentPlayer = Math.random() < 0.5 ? "player1" : "player2";
-    updateTurnIndicator();
+    currentPlayer = Math.random() < 0.5 ? "player1" : "player2"
+    updateTurnIndicator()
     alert(`Player ${currentPlayer === "player1" ? "1" : "2"} starts first!`)
 }
 
