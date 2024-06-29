@@ -20,7 +20,7 @@ Welcome to the Checkers Game! This project is a simple implementation of the cla
 - **Counters**: Displays the number of remaining pieces for each player.
 - **Responsive Design**: Works on different screen sizes.
 
-![Gameplay Screenshot](path/to/gameplay_screenshot.png) 
+![Gameplay Screenshot](assets/images/Screenshot 2024-06-29 030422.png) 
 
 ## Installation
 To get a copy of this project up and running on your local machine, follow these simple steps:
@@ -37,7 +37,6 @@ To get a copy of this project up and running on your local machine, follow these
 
 3. **Open the `index.html` file** in your preferred web browser.
 
-No additional setup or installation is required.
 
 ## Usage
 Once you have the game open in your browser, follow these steps to play:
@@ -48,7 +47,7 @@ Once you have the game open in your browser, follow these steps to play:
 4. Capture opponent pieces by jumping over them.
 5. The game automatically updates the piece counters and turn indicator.
 
-![Turn Indicator and Piece Counter](path/to/turn_indicator_screenshot.png) <!-- Replace with your screenshot image path -->
+![Turn Indicator and Piece Counter](assets/images/Screenshot 2024-06-29 030858.png)
 
 ## Game Rules
 The game follows standard Checkers rules:
@@ -58,16 +57,6 @@ The game follows standard Checkers rules:
 3. **Turns**: Players alternate turns. The game starts with Player 1.
 4. **Winning**: The game ends when one player has no remaining pieces or cannot make a legal move.
 
-## Contributing
-Contributions are welcome! If you'd like to help improve this project, please follow these steps:
-
-1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a pull request.
-
-Please make sure to update tests as appropriate.
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
