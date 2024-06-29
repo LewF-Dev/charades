@@ -1,3 +1,4 @@
+/* Set the body and html to full height and remove margins */
 html, body {
     height: 100%;
     margin: 0;
@@ -7,54 +8,55 @@ html, body {
     justify-content: center;
 }
 
+/* Style for the header */
 .header {
     text-align: center;
     margin-bottom: 20px;
 }
 
+/* Style for the header text */
 .header h1 {
     font-size: 24px;
     margin: 0;
     color: #000;
 }
 
+/* Style for the player counters container */
 .counters {
     display: flexbox;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
+/* Style for individual counter */
 .counter {
     display:inline-block;
     font-size: 16px;
     margin: 20px;
 }
 
+/* Style for player 1 counter */
 .player1-counter {
     color: red;
 }
 
-.player1-count {
-    display: block;
-}
-
+/* Style for player 2 counter */
 .player2-counter {
-    color: blue
+    color: blue;
 }
 
-.player2-count {
-    display: block;
-}
-
+/* Style for the game board */
 .board {
     display: inline-block;
     border: 2px solid #333;
 }
 
+/* Style for the rows of the board */
 .row {
     display: flex;
 }
 
+/* Style for individual squares */
 .square {
     width: 60px;
     height: 60px;
@@ -63,38 +65,46 @@ html, body {
     justify-content: center;
 }
 
+/* Style for white squares */
 .white {
-    background: #fff
+    background: #fff;
 }
 
+/* Style for black squares */
 .black {
-    background: #000
+    background: #000;
 }
 
+/* Style for pieces */
 .piece {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Style for piece icons */
 .piece i {
-    font-size: 30px /* Adjust size as needed */
+    font-size: 30px; /* Adjust size as needed */
 }
 
+/* Color for player 1 pieces */
 .piece.player1 i {
-    color: red /* Color for player 1 */
+    color: red; /* Color for player 1 */
 }
 
+/* Color for player 2 pieces */
 .piece.player2 i {
-    color: blue /* Color for player 2 */
+    color: blue; /* Color for player 2 */
 }
 
+/* Style for selected piece */
 .selected {
-    border: 2px solid yellow
+    border: 2px solid yellow;
 }
 
+/* Style for the main heading */
 #checkers-heading {
-    font-size: 300%
+    font-size: 300%;
 }
 
 /* New styles for turn indicator */
@@ -105,14 +115,16 @@ html, body {
     margin-bottom: 20px;
 }
 
+/* Style for turn indicator */
 .turn-indicator {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: grey ;
+    background-color: grey;
     margin-bottom: 0;
 }
 
+/* Style for turn text */
 .turn-text {
-    font-size: 16px
+    font-size: 16px;
 }

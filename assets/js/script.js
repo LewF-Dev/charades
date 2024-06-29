@@ -1,13 +1,18 @@
+// Wait until the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
-    addSquareEventListeners()
-    initializePieces()
-    updateCounters()
-    determineStartingPlayer()
+    addSquareEventListeners() // Add click event listeners to each square
+    initializePieces() // Place pieces on the board
+    updateCounters() // Update piece counters
+    determineStartingPlayer() // Decide which player starts first
 })
 
+// Variable to store the selected piece
 let selectedPiece = null
-let currentPlayer = null // Track the current player
 
+// Variable to track the current player
+let currentPlayer = null
+
+// Add click event listeners to all squares
 function addSquareEventListeners() {
     const squares = document.querySelectorAll(".square")
     squares.forEach(square => {
@@ -15,6 +20,7 @@ function addSquareEventListeners() {
     })
 }
 
+// Handle click event on a square
 function handleSquareClick(square) {
     if (selectedPiece) {
         if (selectedPiece === square) {
@@ -22,13 +28,14 @@ function handleSquareClick(square) {
             selectedPiece.classList.remove("selected")
             selectedPiece = null
         } else {
-            movePiece(square)
+            movePiece(square) // Move the piece to the clicked square
         }
     } else if (square.firstChild) {
-        selectPiece(square)
+        selectPiece(square) // Select the piece on the clicked square
     }
 }
 
+// Select a piece if it belongs to the current player
 function selectPiece(square) {
     const piece = square.firstChild
     if ((currentPlayer === "player1" && piece.classList.contains("player1")) ||
@@ -41,16 +48,18 @@ function selectPiece(square) {
     }
 }
 
+// Move the selected piece to the target square if the move is valid
 function movePiece(targetSquare) {
     if (isValidMove(targetSquare)) {
         targetSquare.appendChild(selectedPiece.firstChild)
         selectedPiece.classList.remove("selected")
         selectedPiece = null
-        updateCounters()
-        switchPlayer()
+        updateCounters() // Update piece counters after the move
+        switchPlayer() // Switch the turn to the other player
     }
 }
 
+// Validate if the move to the target square is allowed
 function isValidMove(targetSquare) {
     if (targetSquare.firstChild) return false
 
@@ -88,6 +97,7 @@ function isValidMove(targetSquare) {
     return false
 }
 
+// Initialize the pieces on the board
 function initializePieces() {
     const player1Positions = [
         "5-0", "5-2", "5-4", "5-6",
@@ -100,6 +110,7 @@ function initializePieces() {
         "2-1", "2-3", "2-5", "2-7"
     ]
 
+    // Place player 1 pieces
     player1Positions.forEach(pos => {
         const square = document.getElementById(pos)
         const piece = document.createElement("div")
@@ -110,6 +121,7 @@ function initializePieces() {
         square.appendChild(piece)
     })
 
+    // Place player 2 pieces
     player2Positions.forEach(pos => {
         const square = document.getElementById(pos)
         const piece = document.createElement("div")
@@ -121,6 +133,7 @@ function initializePieces() {
     })
 }
 
+// Update the counters showing the number of pieces for each player
 function updateCounters() {
     const player1Count = document.querySelectorAll('.piece.player1').length
     const player2Count = document.querySelectorAll('.piece.player2').length
@@ -128,18 +141,21 @@ function updateCounters() {
     document.getElementById('player2-count').textContent = player2Count
 }
 
+// Determine which player starts the game
 function determineStartingPlayer() {
     currentPlayer = Math.random() < 0.5 ? "player1" : "player2"
     updateTurnIndicator()
     alert(`Player ${currentPlayer === "player1" ? "1" : "2"} starts first!`)
 }
 
+// Switch the turn to the other player
 function switchPlayer() {
     currentPlayer = currentPlayer === "player1" ? "player2" : "player1"
     updateTurnIndicator()
     alert(`It's Player ${currentPlayer === "player1" ? "1" : "2"}'s turn!`)
 }
 
+// Update the turn indicator to show the current player's turn
 function updateTurnIndicator() {
     const turnIndicator = document.getElementById('turn-indicator')
     if (currentPlayer === "player1") {

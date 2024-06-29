@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkers Game</title>
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to external CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Game header -->
     <div class="header">
         <h1 id="checkers-heading">Checkers</h1>
     </div>
+    
+    <!-- Turn indicator -->
     <div class="turn-indicator-container">
         <div class="turn-indicator" id="turn-indicator"></div>
         <p class="turn-text">Turn</p>
     </div>
+    
+    <!-- Player counters -->
     <div class="counters">
         <div class="counter player1-counter">Player 1: <span id="player1-count"> 12</span></div>
         <div class="counter player2-counter">Player 2: <span id="player2-count"> 12</span></div>
     </div>
+    
+    <!-- Game board -->
     <div class="board">
         <!-- Board Squares Here -->
         <div class="row">
@@ -102,7 +111,11 @@
             <div class="square white" id="7-7"></div>
         </div>
     </div>
+    
+    <!-- Footer -->
     <h5>Made by Hack & Cheese</h5>
+    
+    <!-- Link to external JavaScript -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
