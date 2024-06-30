@@ -20,7 +20,7 @@ Welcome to the Checkers Game! This project is a simple implementation of the cla
 - **Counters**: Displays the number of remaining pieces for each player.
 - **Responsive Design**: Works on different screen sizes.
 
-![Gameplay Screenshot](assets/images/Screenshot 2024-06-29 030422.png) 
+![Gameplay Screenshot](assets/images/checkers-screenshot.png) 
 
 ## Installation
 To get a copy of this project up and running on your local machine, follow these simple steps:
@@ -47,7 +47,7 @@ Once you have the game open in your browser, follow these steps to play:
 4. Capture opponent pieces by jumping over them.
 5. The game automatically updates the piece counters and turn indicator.
 
-![Turn Indicator and Piece Counter](assets/images/Screenshot 2024-06-29 030858.png)
+![Turn Indicator and Piece Counter](assets/images/checkers-screenshot.png)
 
 ## Game Rules
 The game follows standard Checkers rules:
